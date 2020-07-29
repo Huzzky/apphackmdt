@@ -15,18 +15,37 @@ class LoginPage extends React.Component {
 
     // * Проверяет input логина и пароля
     CheckLoginAndPasswordAuthInput() {
-
+        const regexp = /w/g;
+        const strLogin = this.state.valueLogin;
+        const strPassword = this.state.valuePassword;
+        if (strLogin!=="" || strLogin!==undefined) {
+            if (strPassword!=="" || strPassword!== undefined) {
+                const checkLogin = regexp.test(strLogin);
+                const checkPassword = regexp.test(strPassword);
+            }
+        }
+        else if (strPassword!=="" || strPassword!== undefined){
+            if (strLogin!=="" || strLogin!==undefined) {
+                
+            }
+        }
+        // const checkLogin = regexp.test(strLogin);
+        // const checkPassword = regexp.test(strPassword);
     }
 
 
     // * Берет значение с input логина
-    ChangeInputValueLogin() {
-
+    ChangeInputValueLogin(e) {
+        this.setState({
+            valueLogin: e.target.value,
+        })
     }
 
     // * Берет значение с input пароля
-    ChangeInputValuePassword() {
-
+    ChangeInputValuePassword(e) {
+        this.setState({
+            valuePassword: e.target.value,
+        })
     }
 
 
