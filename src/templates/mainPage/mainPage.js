@@ -1,5 +1,6 @@
 import React from 'react';
 import NewsPage from '../newsPage/newsPage';
+import LoginPage from '../loginPage/loginPage';
 
 
 class MainPage extends React.Component {
@@ -48,8 +49,9 @@ class MainPage extends React.Component {
         else if (this.state.clickLogin) {
             return(
                 <div>
-                    <p>{this.state.nameProfile}</p>
-                    <a href="#s" onClick={this.ClickLoginOut}>Выйти</a>
+                    {/* <p>{this.state.nameProfile}</p>
+                    <a href="#s" onClick={this.ClickLoginOut}>Выйти</a> */}
+                    <LoginPage/>
                     <NewsPage/>
                 </div>
         )}
