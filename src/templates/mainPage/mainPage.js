@@ -14,7 +14,6 @@ class MainPage extends React.Component {
         this.ClickLoginIn = this.ClickLoginIn.bind(this);
         this.ClickLoginOut = this.ClickLoginOut.bind(this);
 
-        
     }
 
     ClickLoginIn() {
@@ -27,18 +26,14 @@ class MainPage extends React.Component {
             clickLogin: false,
         })
     }
-    
     componentDidMount() {
-        ///// todo 1. Сделать проверку на клик "Войти"
-        ///// todo 2. После нажатия на кнопку "Войти" должно показать ник и/или имя профиля, пока нет loginPage
+
         // todo 3. Сделать newsPage с 5 новостями, пока что
-        // todo 4. Сделать loginPage
-        // todo 5. Сделать profilePage 
-        //// const login = 'admin';
-        //// const password = 'qwerty123456';
+        // todo 5. Сделать profilePage
     }
     render() {
-        if (!this.state.clickLogin) {
+        const { clickLogin } = this.state;
+        if (!clickLogin) {
             return(
                 <div>
                     <a href="#s" onClick={this.ClickLoginIn}>Войти</a>
@@ -46,11 +41,9 @@ class MainPage extends React.Component {
                 </div>
             )
         }
-        else if (this.state.clickLogin) {
+        else if (clickLogin) {
             return(
                 <div>
-                    {/* <p>{this.state.nameProfile}</p>
-                    <a href="#s" onClick={this.ClickLoginOut}>Выйти</a> */}
                     <LoginPage/>
                     <NewsPage/>
                 </div>
