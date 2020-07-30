@@ -1,7 +1,7 @@
 import React from 'react';
 import NewsPage from '../newsPage/newsPage';
 import LoginPage from '../loginPage/loginPage';
-
+import Testpin from './testpin';
 
 class MainPage extends React.Component {
     constructor(props){
@@ -9,7 +9,7 @@ class MainPage extends React.Component {
         this.state = {
             clickLogin: false,
             nameProfile: "Admin",
-
+            testCheck: "true",
         }
         this.ClickLoginIn = this.ClickLoginIn.bind(this);
         this.ClickLoginOut = this.ClickLoginOut.bind(this);
@@ -26,18 +26,21 @@ class MainPage extends React.Component {
             clickLogin: false,
         })
     }
+    
+
     componentDidMount() {
 
         // todo 3. Сделать newsPage с 5 новостями, пока что
         // todo 5. Сделать profilePage
     }
     render() {
-        const { clickLogin } = this.state;
+        const { clickLogin, testCheck } = this.state;
         if (!clickLogin) {
             return(
                 <div>
                     <a href="#s" onClick={this.ClickLoginIn}>Войти</a>
-                    <NewsPage/>
+                    {/* <NewsPage/> */}
+                    <Testpin name={testCheck}/>
                 </div>
             )
         }
@@ -45,7 +48,6 @@ class MainPage extends React.Component {
             return(
                 <div>
                     <LoginPage/>
-                    <NewsPage/>
                 </div>
         )}
     }

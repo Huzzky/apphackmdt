@@ -1,4 +1,5 @@
 import React from 'react';
+import ProfilePage from '../profilePage/profilePage';
 
 class LoginPage extends React.Component {
     constructor(props){
@@ -112,6 +113,11 @@ class LoginPage extends React.Component {
             )
         } else if (AuthOrNotAuth) {
             //TODO создать profilePage и передать ее сюда
+            return(
+                <div>
+                    <ProfilePage/>
+                </div>
+            )
         }
 
 }
