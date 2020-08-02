@@ -1,7 +1,6 @@
 import React from 'react';
 import NewsPage from '../newsPage/newsPage';
 import LoginPage from '../loginPage/loginPage';
-import Testpin from './testpin';
 
 class MainPage extends React.Component {
     constructor(props){
@@ -34,13 +33,12 @@ class MainPage extends React.Component {
         // todo 5. Сделать profilePage
     }
     render() {
-        const { clickLogin, testCheck } = this.state;
+        const { clickLogin} = this.state;
         if (!clickLogin) {
             return(
                 <div>
                     <a href="#s" onClick={this.ClickLoginIn}>Войти</a>
-                    {/* <NewsPage/> */}
-                    <Testpin name={testCheck}/>
+                    <NewsPage/>
                 </div>
             )
         }

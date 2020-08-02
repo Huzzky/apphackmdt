@@ -1,5 +1,4 @@
 import React from 'react'
-import MainPage from '../mainPage/mainPage';
 
 class ProfilePage extends React.Component {
     constructor(props) {
@@ -16,7 +15,7 @@ class ProfilePage extends React.Component {
             bornUser: '14.06.1996',
             jobUser: 'Murphy Group',
             statusUser: 'Admin',
-
+            clickBackStatus: false,
         }}
         this.TestCheckProfile = this.TestCheckProfile.bind(this);
     }
@@ -30,12 +29,11 @@ class ProfilePage extends React.Component {
         this.setState({
             clickBackStatus: true,
         })
-        const { clickBackStatus } = this.state;
-        // <MainPage clickBack={clickBackStatus}/>
+        
     }
 
     render() {
-        const { data } = this.state;
+        const { data,  } = this.state;
         return (
             <React.Fragment>
                 <h1>Ваш профиль</h1>
